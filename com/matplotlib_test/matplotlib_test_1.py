@@ -24,3 +24,4 @@ plt.ylabel("money")
 plt.title("分公司盈利")
 plt.legend() # 为不同的线条定义不同的颜色
 plt.show() # 展示图形
+
