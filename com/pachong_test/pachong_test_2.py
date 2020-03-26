@@ -62,20 +62,20 @@ def pachong_zhuhu_tupian(url):
     # 需要使用headers伪装成浏览器，否则爬不下来
     headers={'User-Agent':'Mozilla/5.0(Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/52.0.2743.116 Safari/537.36' }
     rst = requests.get(url,headers=headers)
-    print(rst.text)
+#    print(rst.text)
     # 先把图片的地址爬下来
     find_tittle_1 = re.compile(r'noscript><img\ssrc="(https:.*?)"\sdata-caption') 
     find_tittle_2 = re.compile(r'noscript><img\ssrc="(https:.*?)"\sdata-rawwidth') 
     print("-" * 20)
     rst_tittle_1 = find_tittle_1.findall(rst.text) # 得到了图片的地址
-    rst_tittle_2 = find_tittle_2.findall(rst.text) # 得到了图片的地址
-    rst_tittle = rst_tittle_1 + rst_tittle_2
+#    rst_tittle_2 = find_tittle_2.findall(rst.text) # 得到了图片的地址
+#    rst_tittle = rst_tittle_1 + rst_tittle_2
 #    print(rst_tittle)
     
     for i_url,i in zip(rst_tittle_1,range(len(rst_tittle_1))):
         rst_tupian = requests.get(i_url)
         print(i_url)
-        with open("C:\\Users\\Dou\\Desktop\\Python\\Jupyter\\pachong_wenjian\\{}.png".format(i+1),'wb') as f:
+        with open("C:\\Users\\l1541\\Desktop\\Python\\Jupyter\\pachong_wenjian\\{}.png".format(i+1),'wb') as f:
             f.write(rst_tupian.content)
             f.close()
         time.sleep(1)
