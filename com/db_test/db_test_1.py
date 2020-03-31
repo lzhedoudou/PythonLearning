@@ -20,23 +20,16 @@ def select():
 def insert():
     # 定义要插入的数据
     
-#    id = 4
-#    name = '安生'
-#    age = '15'
-#    sex = '女'
-#    
-#    cursor = db.cursor()
-#    sql = 'insert into person(id,name,age,sex) values(%s,%s,%s,%s)'
+    id = 4
+    name = '安生'
+    age = '15'
+    sex = '女'
+
+    cursor = db.cursor()
+    sql = 'insert into person(id,name,age,sex) values(%s,%s,%s,%s)'
     
     # 上面方法效率不高，可以采用字典的方式
-    data = 
-    {
-     'id':5
-     'name':'ada'
-     'age':20
-     'sex':'女'
-     }
-    
+
     try:
         cursor.execute(sql,(id,name,age,sex))
         db.commit()
