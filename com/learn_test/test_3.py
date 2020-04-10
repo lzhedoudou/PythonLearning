@@ -1,6 +1,9 @@
+#-*- coding : utf-8 -*-
+# coding: utf-8
 import requests
 from bs4 import BeautifulSoup
 import csv
+import pandas
 
 url = 'https://baike.baidu.com/item/%E7%9C%81%E4%BC%9A/2089891?fr=aladdin'
 headers={'User-Agent':'Mozilla/5.0(Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/80.0.3987.149 Safari/537.36' }
@@ -26,29 +29,30 @@ with open (csv_path,'w',newline='') as f: # 使用newline参数否则有多余�
     writer.writerow(['省份','省会'])
     writer.writerows(list_rst_new)
     f.close()
-print(list_rst_new)
+#print(list_rst_new)
+
+df = pandas.read_csv(csv_path,encoding='gbk',index_col='sdf')
+print(df)
     
     
-#print(len(rst[0].string))
-#print(len(rst))
-#with open(csv_path,'w') as f:# 将结果写入csv
-##   
-##    # 做一个换行 。。。。并把结果循环出来
-##    for i,count in zip(rst,range(len(rst))) : 
-##        if count % 3 == 0:
-##            print("")
-##        rst1 = i.text,end=','
-#    write = csv.writer(f)
-#    i = 0
-#    while i < len(rst):
-#        
-##        list(filter(lambda x:len(rst[i]) == 1,rst))
-#        write.writerow(list(filter(lambda x:len(rst[i]) == 1,rst)).text)
-#        i += 1
-#
-##     这样方法也不行
-##    i = 1
-##    while i <= len(rst):
-##        write.writerow(i.string for i in rst[i])
-##        i += 3
-#    f.close()
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
