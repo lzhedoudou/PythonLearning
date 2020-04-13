@@ -44,7 +44,7 @@ def bccs(**args):
 #    conn.close
     
 def conn_socket_tcp():
-    host = '192.168.151.251'
+    host = '172.29.189.1'
     port = 65345
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     s.connect((host,port))
@@ -55,7 +55,7 @@ def conn_socket_tcp():
 #conn_socket_tcp()
     
 def conn_socket_udp():
-    host = '192.168.151.251'
+    host = '172.29.189.1'
     port = 65345
     s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     data = 'hello! UDP !!!'
