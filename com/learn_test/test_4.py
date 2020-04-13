@@ -11,7 +11,12 @@ with open(csv_path,'r') as f:
     dict_new = {}
     for i in rst:
         dict_new[i[0]]=i[1]
-    print(dict_new)
+#    print(dict_new)
     f.close()
 # 以上内容已创建出来了一个字典
     
+rst1 = list(dict_new.keys())
+print(rst1)
+print('-' * 20)
+rst2 = list(dict_new.values())
+print(rst2)
