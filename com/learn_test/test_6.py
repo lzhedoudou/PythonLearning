@@ -25,7 +25,7 @@ class FrenchDeck:
 # 类实例化
 rst = FrenchDeck()
 print(choice(rst)) # 随机抽取一个list元素
-print(rst.__getitem__(6))
+print(rst.__getitem__(12))
 print(rst[6])
 
 
